@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tharakari Mandi | Fresh Vegetables & Fruits</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://i.ibb.co/0jQ5z7J/vegetable-logo.png" as="image">
+    <link rel="preload" href="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" as="image">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #28a745;
+            --secondary-color: #218838;
+            --dark-color: #1e7e34;
+            --light-color: #d4edda;
+            --text-color: #333;
+            --light-text: #f4f4f4;
+            --background-color: #f9f9f9;
+            --white: #ffffff;
+            --gray: #e0e0e0;
+            --dark-gray: #757575;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            margin-left: 30px;
+            font-size: 1.2rem;
+            color: var(--text-color);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 80px;
+            left: -100%;
+            width: 80%;
+            height: calc(100vh - 80px);
+            background-color: var(--white);
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            transition: left 0.3s ease;
+            z-index: 999;
+            padding: 20px;
+        }
+
+        .mobile-menu.active {
+            left: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 20px;
+        }
+
+        .mobile-menu ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: left;
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+
+        .features .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 30px;
+            flex: 1;
+            min-width: 250px;
+            margin: 15px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-box i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .feature-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background-color: var(--background-color);
+        }
+
+        .products h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: none;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 20px;
+            margin: 5px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            border: 3px solid var(--primary-color);
+            border-top: 3px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .product-image img.loaded {
+            opacity: 1;
+        }
+
+        .product-image img.loaded + ::before {
+            display: none;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .product-info p {
+            color: var(--dark-gray);
+            margin-bottom: 15px;
+        }
+
+        .product-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .add-to-cart {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .product-card.skeleton {
+            background: #f0f0f0;
+            height: 350px;
+            animation: pulse 1.5s infinite;
+        }
+
+        .product-card.skeleton .product-image,
+        .product-card.skeleton .product-info {
+            background: #e0e0e0;
+            border-radius: 4px;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .about .container {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-content {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 40px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--background-color);
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            margin-bottom: 50px;
+        }
+
+        .testimonial-slider {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            display: none;
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .testimonial p {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .customer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .customer img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+
+        .customer span {
+            font-weight: 600;
+        }
+
+        .slider-controls {
+            margin-top: 30px;
+        }
+
+        .slider-controls button {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .slider-controls button:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            padding: 60px 0;
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .newsletter h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .newsletter p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .newsletter form {
+            display: flex;
+            max-width: 500 IDEApx;
+            margin: 0 auto;
+        }
+
+        .newsletter input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 1rem;
+        }
+
+        .newsletter button {
+            border-radius: 0 4px 4px 0;
+            padding: 12px 20px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .contact h2 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .info-box {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .info-box i {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-5px);
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--background-color);
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid var(--gray);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Cart Modal */
+        .cart-modal {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            background-color: var(--white);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 1001;
+            overflow-y: auto;
+        }
+
+        .cart-modal.active {
+            right: 0;
+        }
+
+        .cart-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-cart {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-gray);
+            transition: color 0.3s ease;
+        }
+
+        .close-cart:hover {
+            color: var(--text-color);
+        }
+
+        .cart-items {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .cart-item {
+            display: flex;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-right: 15px;
+            position: relative;
+        }
+
+        .cart-item-image::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary-color);
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .cart-item-image img.loaded {
+            opacity: 1;
+        }
+
+        .cart-item-image img.loaded + ::before {
+            display: none;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-price {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .cart-item-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity-btn {
+            width: 25px;
+            height: 25px;
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .remove-item {
+            margin-left: auto;
+            color: var(--dark-gray);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .remove-item:hover {
+            color: #f44336;
+        }
+
+        .cart-total {
+            padding: 20px;
+            border-top: 1px solid var(--gray);
+            text-align: right;
+        }
+
+        .cart-total h4 {
+            font-size: 1.2rem;
+        }
+
+        .cart-total span {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+
+        .cart-actions {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cart-actions .btn {
+            flex: 1;
+            margin: 0 5px;
+            text-align: center;
+        }
+
+        .clear-cart {
+            background-color: #f44336;
+        }
+
+        .clear-cart:hover {
+            background-color: #d32f2f;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-text);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+            padding: 0 15px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col p {
+            color: var(--light-color);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light-color);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero {
+                text-align: center;
+            }
+            
+            .hero-content {
+                max-width: 100%;
+            }
+            
+            .feature-box {
+                min-width: 100%;
+                margin: 10px 0;
+            }
+            
+            .newsletter form {
+                flex-direction: column;
+            }
+            
+            .newsletter input {
+                border-radius: 4px;
+                margin-bottom: 10px;
+            }
+            
+            .newsletter button {
+                border-radius: 4px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .filter-buttons {
+                justify-content: flex-start;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cart-actions {
+                flex-direction: column;
+            }
+            
+            .cart-actions .btn {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="https://i.ibb.co/0jQ5z7J/vegetable-logo.png" alt="Tharakari Mandi Logo" loading="lazy">
+                <span>Tharakari Mandi</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Fresh Vegetables & Fruits Delivered to Your Door</h1>
+                <p>100% natural, pesticide-free, and farm-fresh produce straight from local farmers to your table</p>
+                <a href="#products" class="btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="feature-box">
+                <i class="fas fa-truck"></i>
+                <h3>Free Delivery</h3>
+                <p>On orders over ₹500</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-leaf"></i>
+                <h3>100
+
+% Organic</h3>
+                <p>Farm fresh produce</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Quality Guarantee</h3>
+                <p>Fresh or your money back</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2>Our Fresh Products</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="vegetables">Vegetables</button>
+                <button class="filter-btn" data-filter="fruits">Fruits</button>
+                <button class="filter-btn" data-filter="herbs">Herbs</button>
+            </div>
+            <div class="product-grid"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>About Tharakari Mandi</h2>
+                <p>At Tharakari Mandi, we connect you directly with local farmers to bring you the freshest, most nutritious produce possible. Our platform supports small-scale farmers while providing you with quality vegetables and fruits.</p>
+                <p>We don't use any synthetic pesticides or fertilizers, and our produce is always fresh from the farm. Our vegetables are harvested at peak ripeness and delivered to you within hours of picking.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Organic Farm" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <p>"The vegetables from Tharakari Mandi are the freshest I've ever had delivered. The taste difference is incredible compared to supermarket vegetables!"</p>
+                    <div class="customer">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Priya S." loading="lazy">
+                        <span>Priya S.</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"I've been a customer for 2 years now and I can't imagine buying vegetables anywhere else. Quality is always consistent and prices are fair."</p>
+                    <div class="customer">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Rahul T." loading="lazy">
+                        <span>Rahul T.</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"Their organic tomatoes actually taste like tomatoes! My family can tell the difference in every meal I prepare with Tharakari Mandi produce."</p>
+                    <div class="customer">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ananya M." loading="lazy">
+                        <span>Ananya M.</span>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h3>Subscribe to Our Newsletter</h3>
+            <p>Get updates on seasonal produce, recipes, and special offers.</p>
+            <form id="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-box">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 Farmer's Market, Bangalore, Karnataka 560001</p>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-phone"></i>
+                        <p>+91 98765 43210</p>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-envelope"></i>
+                        <p>contact@tharakarimandi.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form" action="https://formspree.io/f/mdkeqqnp" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="subject" placeholder="Subject">
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <span class="close-cart">×</span>
+            </div>
+            <div class="cart-items"></div>
+            <div class="cart-total">
+                <h4>Total: <span>₹0</span></h4>
+            </div>
+            <div class="cart-actions">
+                <button class="btn clear-cart">Clear Cart</button>
+                <button class="btn checkout">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Tharakari Mandi</h4>
+                    <p>Bringing farm-fresh vegetables and fruits to your table since 2015.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 Tharakari Mandi. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const hamburger = document.querySelector('.hamburger');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            hamburger.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+            });
+            
+            const mobileLinks = document.querySelectorAll('.mobile-menu a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                });
+            });
+            
+            // Product Data with Indian prices and images
+            const products = [
+                {
+                    id: 1,
+                    name: 'Tomatoes (Desi)',
+                    category: 'vegetables',
+                    price: 40,
+                    image: 'https://5.imimg.com/data5/SELLER/Default/2021/12/QI/OM/JA/3033203/fresh-tomato.jpg',
+                    description: 'Fresh desi tomatoes, perfect for curries and salads'
+                },
+                {
+                    id: 2,
+                    name: 'Potatoes',
+                    category: 'vegetables',
+                    price: 25,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000062_24-fresho-potato.jpg',
+                    description: 'Fresh farm potatoes, ideal for all Indian dishes'
+                },
+                {
+                    id: 3,
+                    name: 'Onions',
+                    category: 'vegetables',
+                    price: 30,
+                    image: 'https://m.media-amazon.com/images/I/61u+E5wxMaL._SL1500_.jpg',
+                    description: 'Premium quality onions with strong flavor'
+                },
+                {
+                    id: 4,
+                    name: 'Carrots',
+                    category: 'vegetables',
+                    price: 50,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000148_19-fresho-carrot-orange.jpg',
+                    description: 'Sweet and crunchy organic carrots'
+                },
+                {
+                    id: 5,
+                    name: 'Cauliflower',
+                    category: 'vegetables',
+                    price: 35,
+                    image: 'https://www.jiomart.com/images/product/original/491000335/fresho-cauliflower-1-pc-approx-400-g-800-g-product-images-o491000335-p590125385-0-202203170219.jpg',
+                    description: 'Fresh white cauliflower, pesticide-free'
+                },
+                {
+                    id: 6,
+                    name: 'Brinjal (Baingan)',
+                    category: 'vegetables',
+                    price: 45,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000074_19-fresho-brinjal-purple.jpg',
+                    description: 'Fresh purple brinjal for bharta and curries'
+                },
+                {
+                    id: 7,
+                    name: 'Lady Finger (Bhindi)',
+                    category: 'vegetables',
+                    price: 60,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000067_24-fresho-lady-finger.jpg',
+                    description: 'Tender bhindi for crispy fry or curry'
+                },
+                {
+                    id: 8,
+                    name: 'Cucumber',
+                    category: 'vegetables',
+                    price: 20,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000103_16-fresho-cucumber.jpg',
+                    description: 'Fresh green cucumbers for salads and raita'
+                },
+                {
+                    id: 9,
+                    name: 'Spinach (Palak)',
+                    category: 'vegetables',
+                    price: 15,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000159_17-fresho-spinach.jpg',
+                    description: 'Organic spinach leaves, rich in iron'
+                },
+                {
+                    id: 10,
+                    name: 'Capsicum (Shimla Mirch)',
+                    category: 'vegetables',
+                    price: 80,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000060_15-fresho-capsicum-green.jpg',
+                    description: 'Fresh green capsicum for stir fries'
+                },
+                {
+                    id: 11,
+                    name: 'Beetroot',
+                    category: 'vegetables',
+                    price: 40,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000150_15-fresho-beetroot.jpg',
+                    description: 'Organic beetroots for salads and juices'
+                },
+                {
+                    id: 12,
+                    name: 'Radish (Mooli)',
+                    category: 'vegetables',
+                    price: 30,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000152_16-fresho-radish.jpg',
+                    description: 'Fresh white radish for salads and parathas'
+                },
+                {
+                    id: 13,
+                    name: 'Bottle Gourd (Lauki)',
+                    category: 'vegetables',
+                    price: 35,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000096_17-fresho-bottle-gourd.jpg',
+                    description: 'Fresh lauki for healthy curries and juice'
+                },
+                {
+                    id: 14,
+                    name: 'Bitter Gourd (Karela)',
+                    category: 'vegetables',
+                    price: 55,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000094_16-fresho-bitter-gourd.jpg',
+                    description: 'Organic karela for diabetic-friendly dishes'
+                },
+                {
+                    id: 15,
+                    name: 'Pumpkin (Kaddu)',
+                    category: 'vegetables',
+                    price: 30,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000108_18-fresho-pumpkin.jpg',
+                    description: 'Sweet yellow pumpkin for curries and halwa'
+                },
+                {
+                    id: 16,
+                    name: 'Bananas (Yelakki)',
+                    category: 'fruits',
+                    price: 40,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000040_18-fresho-banana-yelakki.jpg',
+                    description: 'Sweet yelakki bananas, perfect for snacks'
+                },
+                {
+                    id: 17,
+                    name: 'Apples (Shimla)',
+                    category: 'fruits',
+                    price: 120,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000002_15-fresho-apple-shimla.jpg',
+                    description: 'Crisp Shimla apples, rich in fiber'
+                },
+                {
+                    id: 18,
+                    name: 'Oranges (Nagpur)',
+                    category: 'fruits',
+                    price: 80,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000015_13-fresho-orange-nagpur.jpg',
+                    description: 'Juicy Nagpur oranges, vitamin C rich'
+                },
+                {
+                    id: 19,
+                    name: 'Pomegranate (Anar)',
+                    category: 'fruits',
+                    price: 90,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000025_17-fresho-pomegranate.jpg',
+                    description: 'Ruby red pomegranate seeds, antioxidant-rich'
+                },
+                {
+                    id: 20,
+                    name: 'Mangoes (Alphonso)',
+                    category: 'fruits',
+                    price: 150,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000206_13-fresho-mango-alphonso.jpg',
+                    description: 'King of fruits, sweet Alphonso mangoes'
+                },
+                {
+                    id: 21,
+                    name: 'Papaya',
+                    category: 'fruits',
+                    price: 45,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000024_16-fresho-papaya.jpg',
+                    description: 'Ripe papaya, great for digestion'
+                },
+                {
+                    id: 22,
+                    name: 'Watermelon',
+                    category: 'fruits',
+                    price: 30,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000031_17-fresho-watermelon.jpg',
+                    description: 'Juicy watermelon, perfect summer fruit'
+                },
+                {
+                    id: 23,
+                    name: 'Muskmelon',
+                    category: 'fruits',
+                    price: 50,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000022_16-fresho-muskmelon.jpg',
+                    description: 'Sweet and fragrant muskmelon'
+                },
+                {
+                    id: 24,
+                    name: 'Guava',
+                    category: 'fruits',
+                    price: 60,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000018_18-fresho-guava.jpg',
+                    description: 'Fresh pink guava, rich in vitamin C'
+                },
+                {
+                    id: 25,
+                    name: 'Grapes (Black)',
+                    category: 'fruits',
+                    price: 70,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000016_17-fresho-grapes-black.jpg',
+                    description: 'Sweet black seedless grapes'
+                },
+                {
+                    id: 26,
+                    name: 'Pineapple',
+                    category: 'fruits',
+                    price: 55,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000023_18-fresho-pineapple.jpg',
+                    description: 'Juicy golden pineapples, tropical delight'
+                },
+                {
+                    id: 27,
+                    name: 'Chikoo',
+                    category: 'fruits',
+                    price: 65,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000012_16-fresho-chikoo-sapota.jpg',
+                    description: 'Sweet and creamy chikoo/sapota'
+                },
+                {
+                    id: 28,
+                    name: 'Custard Apple (Sitaphal)',
+                    category: 'fruits',
+                    price: 85,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000011_15-fresho-custard-apple.jpg',
+                    description: 'Seasonal sitaphal with creamy texture'
+                },
+                {
+                    id: 29,
+                    name: 'Lychee',
+                    category: 'fruits',
+                    price: 110,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000020_15-fresho-lychee.jpg',
+                    description: 'Fresh lychees, seasonal summer fruit'
+                },
+                {
+                    id: 30,
+                    name: 'Kiwi',
+                    category: 'fruits',
+                    price: 95,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000019_15-fresho-kiwi.jpg',
+                    description: 'Tropical kiwi fruit, rich in antioxidants'
+                },
+                {
+                    id: 31,
+                    name: 'Coriander Leaves',
+                    category: 'herbs',
+                    price: 10,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000080_15-fresho-coriander-leaves.jpg',
+                    description: 'Fresh coriander leaves for garnishing'
+                },
+                {
+                    id: 32,
+                    name: 'Mint Leaves',
+                    category: 'herbs',
+                    price: 15,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000161_15-fresho-mint-leaves.jpg',
+                    description: 'Aromatic mint leaves for chutneys'
+                },
+                {
+                    id: 33,
+                    name: 'Curry Leaves',
+                    category: 'herbs',
+                    price: 5,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000079_13-fresho-curry-leaves.jpg',
+                    description: 'Fresh curry leaves for tempering'
+                },
+                {
+                    id: 34,
+                    name: 'Basil (Tulsi)',
+                    category: 'herbs',
+                    price: 20,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/40001105_6-fresho-basil-leaves.jpg',
+                    description: 'Holy basil leaves for tea and remedies'
+                },
+                {
+                    id: 35,
+                    name: 'Spring Onions',
+                    category: 'herbs',
+                    price: 25,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000087_15-fresho-spring-onion.jpg',
+                    description: 'Fresh spring onions for salads'
+                }
+            ];
+            
+            // Display Products
+            const productGrid = document.querySelector('.product-grid');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            function displayProducts(filter = 'all') {
+                productGrid.innerHTML = '<div class="product-card skeleton"></div>'.repeat(6);
+                
+                setTimeout(() => {
+                    productGrid.innerHTML = '';
+                    
+                    const filteredProducts = filter === 'all' 
+                        ? products 
+                        : products.filter(product => product.category === filter);
+                    
+                    filteredProducts.forEach(product => {
+                        const productCard = document.createElement('div');
+                        productCard.className = 'product-card';
+                        productCard.innerHTML = `
+                            <div class="product-image">
+                                <img src="${product.image}" alt="${product.name}" 
+                                     onerror="this.src='https://via.placeholder.com/250x200?text=${encodeURIComponent(product.name)}'" 
+                                     loading="lazy" onload="this.classList.add('loaded')">
+                            </div>
+                            <div class="product-info">
+                                <h3>${product.name}</h3>
+                                <p>${product.description}</p>
+                                <div class="product-price">
+                                    <span class="price">₹${product.price}</span>
+                                    <button class="add-to-cart" data-id="${product.id}" aria-label="Add ${product.name} to cart">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+                        productGrid.appendChild(productCard);
+                    });
+                    
+                    document.querySelectorAll('.add-to-cart').forEach(button => {
+                        button.addEventListener('click', function() {
+                            const productId = parseInt(this.getAttribute('data-id'));
+                            addToCart(productId);
+                        });
+                    });
+                }, 500);
+            }
+            
+            // Filter Products
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.getAttribute('data-filter');
+                    displayProducts(filter);
+                });
+            });
+            
+            // Initialize with all products
+            try {
+                displayProducts();
+            } catch (error) {
+                productGrid.innerHTML = '<p>Sorry, something went wrong. Please try again later.</p>';
+                console.error('Product loading error:', error);
+            }
+            
+            // Cart Functionality
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartIcon = document.querySelector('.cart-icon');
+            const cartModal = document.querySelector('.cart-modal');
+            const closeCart = document.querySelector('.close-cart');
+            const cartItemsContainer = document.querySelector('.cart-items');
+            const cartTotal = document.querySelector('.cart-total span');
+            const cartCount = document.querySelector('.cart-count');
+            
+            function updateCartCount() {
+                const count = cart.reduce((total, item) => total + item.quantity, 0);
+                cartCount.textContent = count;
+            }
+            
+            function addToCart(productId) {
+                const product = products.find(p => p.id === productId);
+                const existingItem = cart.find(item => item.id === productId);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        id: product.id,
+                        name: product.name,
+                        price: product.price,
+                        image: product.image,
+                        quantity: 1
+                    });
+                }
+                
+                updateCartCount();
+                saveCart();
+                showCartModal();
+            }
+            
+            function saveCart() {
+                localStorage.setItem('cart', JSON.stringify(cart));
+            }
+            
+            function showCartModal() {
+                cartModal.classList.add('active');
+                renderCartItems();
+            }
+            
+            function hideCartModal() {
+                cartModal.classList.remove('active');
+            }
+            
+            function renderCartItems() {
+                if (cart.length === 0) {
+                    cartItemsContainer.innerHTML = '<p>Your cart is empty</p>';
+                    cartTotal.textContent = '₹0';
+                    return;
+                }
+                
+                cartItemsContainer.innerHTML = '';
+                let total = 0;
+                
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <div class="cart-item-image">
+                            <img src="${item.image}" alt="${item.name}" 
+                                 onerror="this.src='https://via.placeholder.com/80x80?text=${encodeURIComponent(item.name)}'" 
+                                 loading="lazy" onload="this.classList.add('loaded')">
+                        </div>
+                        <div class="cart-item-details">
+                            <h4 class="cart-item-title">${item.name}</h4>
+                            <p class="cart-item-price">₹${item.price}</p>
+                            <div class="cart-item-actions">
+                                <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                                <span class="quantity">${item.quantity}</span>
+                                <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                                <span class="remove-item" data-id="${item.id}">
+                                    <i class="fas fa-trash"></i>
+                                </span>
+                            </div>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(cartItem);
+                });
+                
+                cartTotal.textContent = `₹${total}`;
+                
+                document.querySelectorAll('.quantity-btn').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const productId = parseInt(this.getAttribute('data-id'));
+                        const isPlus = this.classList.contains('plus');
+                        updateCartItemQuantity(productId, isPlus);
+                    });
+                });
+                
+                document.querySelectorAll('.remove-item').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const productId = parseInt(this.getAttribute('data-id'));
+                        removeFromCart(productId);
+                    });
+                });
+            }
+            
+            function updateCartItemQuantity(productId, isPlus) {
+                const item = cart.find(item => item.id === productId);
+                
+                if (isPlus) {
+                    item.quantity += 1;
+                } else {
+                    if (item.quantity > 1) {
+                        item.quantity -= 1;
+                    } else {
+                        removeFromCart(productId);
+                        return;
+                    }
+                }
+                
+                updateCartCount();
+                saveCart();
+                renderCartItems();
+            }
+            
+            function removeFromCart(productId) {
+                cart = cart.filter(item => item.id !== productId);
+                updateCartCount();
+                saveCart();
+                renderCartItems();
+            }
+            
+            document.querySelector('.clear-cart').addEventListener('click', function() {
+                cart = [];
+                updateCartCount();
+                saveCart();
+                renderCartItems();
+            });
+            
+            document.querySelector('.checkout').addEventListener('click', function() {
+                alert('Thank you for your order! This is a demo site, no actual purchase will be made.');
+                cart = [];
+                updateCartCount();
+                saveCart();
+                renderCartItems();
+                hideCartModal();
+            });
+            
+            cartIcon.addEventListener('click', showCartModal);
+            closeCart.addEventListener('click', hideCartModal);
+            
+            document.addEventListener('click', function(e) {
+                if (!cartModal.contains(e.target) && !cartIcon.contains(e.target)) {
+                    hideCartModal();
+                }
+            });
+            
+            updateCartCount();
+            
+            // Testimonial Slider
+            const testimonials = document.querySelectorAll('.testimonial');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            let currentTestimonial = 0;
+            
+            function showTestimonial(index) {
+                testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+                testimonials[index].classList.add('active');
+            }
+            
+            function nextTestimonial() {
+                currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+                showTestimonial(currentTestimonial);
+            }
+            
+            function prevTestimonial() {
+                currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+                showTestimonial(currentTestimonial);
+            }
+            
+            nextBtn.addEventListener('click', nextTestimonial);
+            prevBtn.addEventListener('click', prevTestimonial);
+            
+            setInterval(nextTestimonial, 5000);
+            
+            // Form Submissions
+            const newsletterForm = document.getElementById('newsletter-form');
+            
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input').value;
+                alert(`Thank you for subscribing with ${email}! You'll hear from us soon.`);
+                this.reset();
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Test image URLs
+            products.forEach(product => {
+                const img = new Image();
+                img.src = product.image;
+                img.onerror = () => {
+                    console.warn(`Failed to load image for ${product.name}: ${product.image}`);
+                };
+            });
+        });
+    </script>
+</body>
+</html>
