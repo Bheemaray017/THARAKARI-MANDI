@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tharakari Mandi | Fresh Vegetables & Fruits</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* [All CSS styles remain exactly the same as in your previous code] */
+        /* ... */
+    </style>
+</head>
+<body>
+    <!-- [All HTML content remains exactly the same until the JavaScript] -->
+    <!-- ... -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const hamburger = document.querySelector('.hamburger');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            hamburger.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileLinks = document.querySelectorAll('.mobile-menu a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                });
+            });
+            
+            // Product Data with reliable image sources and fallbacks
+            const products = [
+                // Vegetables
+                {
+                    id: 1,
+                    name: 'Tomatoes (Desi)',
+                    category: 'vegetables',
+                    price: 40,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000112_17-fresho-tomato-hybrid.jpg',
+                    fallbackImage: 'https://images.unsplash.com/photo-1592841200221-a6895f5ba648?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    description: 'Fresh desi tomatoes, perfect for curries and salads'
+                },
+                {
+                    id: 2,
+                    name: 'Potatoes',
+                    category: 'vegetables',
+                    price: 25,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000062_24-fresho-potato.jpg',
+                    fallbackImage: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    description: 'Fresh farm potatoes, ideal for all Indian dishes'
+                },
+                {
+                    id: 3,
+                    name: 'Onions',
+                    category: 'vegetables',
+                    price: 30,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000104_16-fresho-onion.jpg',
+                    fallbackImage: 'https://images.unsplash.com/photo-1580201092675-a0a6a6cafbb1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    description: 'Premium quality onions with strong flavor'
+                },
+                {
+                    id: 4,
+                    name: 'Carrots',
+                    category: 'vegetables',
+                    price: 50,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000148_19-fresho-carrot-orange.jpg',
+                    fallbackImage: 'https://images.unsplash.com/photo-1447175008436-054170c2e979?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    description: 'Sweet and crunchy organic carrots'
+                },
+                {
+                    id: 5,
+                    name: 'Cauliflower',
+                    category: 'vegetables',
+                    price: 35,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000065_21-fresho-cauliflower.jpg',
+                    fallbackImage: 'https://images.unsplash.com/photo-1584270354949-c26b0d5b4a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    description: 'Fresh white cauliflower, pesticide-free'
+                },
+                {
+                    id: 6,
+                    name: 'Brinjal (Baingan)',
+                    category: 'vegetables',
+                    price: 45,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000074_19-fresho-brinjal-purple.jpg',
+                    fallbackImage: 'https://images.unsplash.com/photo-1604977048617-5ab964a8a1e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    description: 'Fresh purple brinjal for bharta and curries'
+                },
+                {
+                    id: 7,
+                    name: 'Lady Finger (Bhindi)',
+                    category: 'vegetables',
+                    price: 60,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000067_24-fresho-lady-finger.jpg',
+                    fallbackImage: 'https://images.unsplash.com/photo-1563565375-f3fdfdbefa5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    description: 'Tender bhindi for crispy fry or curry'
+                },
+                {
+                    id: 8,
+                    name: 'Cucumber',
+                    category: 'vegetables',
+                    price: 20,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000103_16-fresho-cucumber.jpg',
+                    fallbackImage: 'https://images.unsplash.com/photo-1604977048617-5ab964a8a1e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    description: 'Fresh green cucumbers for salads and raita'
+                },
+                {
+                    id: 9,
+                    name: 'Spinach (Palak)',
+                    category: 'vegetables',
+                    price: 15,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000159_17-fresho-spinach.jpg',
+                    fallbackImage: 'https://images.unsplash.com/photo-1576045057995-568f588f82fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    description: 'Organic spinach leaves, rich in iron'
+                },
+                {
+                    id: 10,
+                    name: 'Capsicum (Shimla Mirch)',
+                    category: 'vegetables',
+                    price: 80,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000060_15-fresho-capsicum-green.jpg',
+                    fallbackImage: 'https://images.unsplash.com/photo-1563565375-f3fdfdbefa5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    description: 'Fresh green capsicum for stir fries'
+                },
+                
+                // Fruits
+                {
+                    id: 11,
+                    name: 'Bananas (Yelakki)',
+                    category: 'fruits',
+                    price: 40,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000040_18-fresho-banana-yelakki.jpg',
+                    fallbackImage: 'https://images.unsplash.com/photo-1603833665858-e61a17a96224?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    description: 'Sweet yelakki bananas, perfect for snacks'
+                },
+                {
+                    id: 12,
+                    name: 'Apples (Shimla)',
+                    category: 'fruits',
+                    price: 120,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000002_15-fresho-apple-shimla.jpg',
+                    fallbackImage: 'https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    description: 'Crisp Shimla apples, rich in fiber'
+                },
+                {
+                    id: 13,
+                    name: 'Oranges (Nagpur)',
+                    category: 'fruits',
+                    price: 80,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000015_13-fresho-orange-nagpur.jpg',
+                    fallbackImage: 'https://images.unsplash.com/photo-1580052614030-c3f5a1c5260d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    description: 'Juicy Nagpur oranges, vitamin C rich'
+                },
+                {
+                    id: 14,
+                    name: 'Pomegranate (Anar)',
+                    category: 'fruits',
+                    price: 90,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000025_17-fresho-pomegranate.jpg',
+                    fallbackImage: 'https://images.unsplash.com/photo-1559181567-c3190ca9959b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    description: 'Ruby red pomegranate seeds, antioxidant-rich'
+                },
+                {
+                    id: 15,
+                    name: 'Mangoes (Alphonso)',
+                    category: 'fruits',
+                    price: 150,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000206_13-fresho-mango-alphonso.jpg',
+                    fallbackImage: 'https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    description: 'King of fruits, sweet Alphonso mangoes'
+                },
+                {
+                    id: 16,
+                    name: 'Papaya',
+                    category: 'fruits',
+                    price: 45,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000024_16-fresho-papaya.jpg',
+                    fallbackImage: 'https://images.unsplash.com/photo-1559181567-c3190ca9959b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    description: 'Ripe papaya, great for digestion'
+                },
+                {
+                    id: 17,
+                    name: 'Watermelon',
+                    category: 'fruits',
+                    price: 30,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000031_17-fresho-watermelon.jpg',
+                    fallbackImage: 'https://images.unsplash.com/photo-1563114775-a17a72b7ab04?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    description: 'Juicy watermelon, perfect summer fruit'
+                },
+                {
+                    id: 18,
+                    name: 'Muskmelon',
+                    category: 'fruits',
+                    price: 50,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000022_16-fresho-muskmelon.jpg',
+                    fallbackImage: 'https://images.unsplash.com/photo-1571575173700-afb9492e6a50?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    description: 'Sweet and fragrant muskmelon'
+                },
+                {
+                    id: 19,
+                    name: 'Guava',
+                    category: 'fruits',
+                    price: 60,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000018_18-fresho-guava.jpg',
+                    fallbackImage: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    description: 'Fresh pink guava, rich in vitamin C'
+                },
+                {
+                    id: 20,
+                    name: 'Grapes (Black)',
+                    category: 'fruits',
+                    price: 70,
+                    image: 'https://www.bigbasket.com/media/uploads/p/l/10000016_17-fresho-grapes-black.jpg',
+                    fallbackImage: 'https://images.unsplash.com/photo-1550258987-190a2d41a8ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+                    description: 'Sweet black seedless grapes'
+                }
+            ];
+
+            // Image loader with fallback
+            function loadImageWithFallback(imgElement, mainUrl, fallbackUrl) {
+                const img = new Image();
+                img.src = mainUrl;
+                
+                img.onload = function() {
+                    imgElement.src = mainUrl;
+                };
+                
+                img.onerror = function() {
+                    imgElement.src = fallbackUrl;
+                    console.log(`Using fallback image for ${imgElement.alt}`);
+                };
+            }
+
+            // Display Products with image fallback handling
+            const productGrid = document.querySelector('.product-grid');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            function displayProducts(filter = 'all') {
+                productGrid.innerHTML = '';
+                
+                const filteredProducts = filter === 'all' 
+                    ? products 
+                    : products.filter(product => product.category === filter);
+                
+                filteredProducts.forEach(product => {
+                    const productCard = document.createElement('div');
+                    productCard.className = 'product-card';
+                    productCard.innerHTML = `
+                        <div class="product-image">
+                            <img src="" alt="${product.name}" loading="lazy" data-main="${product.image}" data-fallback="${product.fallbackImage}">
+                        </div>
+                        <div class="product-info">
+                            <h3>${product.name}</h3>
+                            <p>${product.description}</p>
+                            <div class="product-price">
+                                <span class="price">₹${product.price}</span>
+                                <button class="add-to-cart" data-id="${product.id}">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    productGrid.appendChild(productCard);
+                    
+                    // Load image with fallback
+                    const imgElement = productCard.querySelector('img');
+                    loadImageWithFallback(imgElement, product.image, product.fallbackImage);
+                });
+                
+                // Add event listeners to add-to-cart buttons
+                document.querySelectorAll('.add-to-cart').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const productId = parseInt(this.getAttribute('data-id'));
+                        addToCart(productId);
+                    });
+                });
+            }
+
+            // [Rest of the JavaScript code remains exactly the same]
+            // ... (cart functionality, testimonial slider, etc.)
+        });
+    </script>
+</body>
+</html>
